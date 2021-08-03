@@ -1,0 +1,20 @@
+
+# Stage 1: base images
+FROM node:lts-alpine as base
+
+RUN mkdir -p /home/node/app && chown -R node:node /home/node/app
+
+WORKDIR /home/node/app
+
+# setup nodemon
+RUN npm install -g nodemon
+
+ADD --chown=node:node package* .
+
+RUN npm i
+
+ADD --chown=node:node . .
+
+USER node
+
+CMD ["HOST=0.0.0.0 nodemon"]
