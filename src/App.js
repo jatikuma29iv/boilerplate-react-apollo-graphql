@@ -19,7 +19,8 @@ function App() {
       <Welcome />
     </RenderOnAnonymous>
     <RenderOnAuthenticated>
-    <Layout>
+    <Router>
+      <Layout>
         <Switch>
           <Route exact path="/">
             <Home />
@@ -34,8 +35,8 @@ function App() {
             <About />
           </Route>
         </Switch>
-      </Router>
-    </Layout>
+      </Layout>
+    </Router>
     </RenderOnAuthenticated>
   </div>
   );
