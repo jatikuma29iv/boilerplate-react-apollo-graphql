@@ -10,8 +10,8 @@ import './App.sass'
 
 function App() {
   return (
-    <Layout>
-      <Router>
+    <Router>
+      <Layout>
         <Switch>
           <Route exact path="/">
             <Home />
@@ -26,8 +26,8 @@ function App() {
             <About />
           </Route>
         </Switch>
-      </Router>
-    </Layout>
+      </Layout>
+    </Router>
   );
 }
 
