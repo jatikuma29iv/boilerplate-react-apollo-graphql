@@ -6,7 +6,9 @@ import reportWebVitals from './reportWebVitals';
 import { ApolloProvider } from '@apollo/client'
 import client from './App.graphql'
 
-ReactDOM.render(
+import UserService from './services/UserService'
+
+const renderApp = () => ReactDOM.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
       <App />
@@ -14,6 +16,8 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+UserService.initKeycloak(renderApp);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

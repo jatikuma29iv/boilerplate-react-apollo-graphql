@@ -1,0 +1,8 @@
+{
+  "realm": "lms",
+  "auth-server-url": "http://localhost:3000/auth/",
+  "ssl-required": "external",
+  "resource": "lms-app",
+  "public-client": true,
+  "confidential-port": 0
+}

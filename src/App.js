@@ -6,12 +6,20 @@ import Contanct from './pages/contact'
 import About from './pages/about'
 import Layout from './components/layout'
 
+import RenderOnAnonymous from './components/RenderOnAnonymous'
+import RenderOnAuthenticated from './components/RenderOnAuthenticated'
+import Welcome from './components/Welcome'
+
 import './App.sass'
 
 function App() {
   return (
+  <div className='container'>
+    <RenderOnAnonymous>
+      <Welcome />
+    </RenderOnAnonymous>
+    <RenderOnAuthenticated>
     <Layout>
-      <Router>
         <Switch>
           <Route exact path="/">
             <Home />
@@ -28,6 +36,8 @@ function App() {
         </Switch>
       </Router>
     </Layout>
+    </RenderOnAuthenticated>
+  </div>
   );
 }
 
